@@ -14,7 +14,7 @@
 #' Ymat = densityCurves, Ytype = 'density', Sup = dSup)
 #' wass_r2 = wass_R2(res)
 wass_R2 <- function(wass_regress_res) {
-        if (class(wass_regress_res) != 'WRI') {
+        if (!is(wass_regress_res, "WRI")) {
                 stop("the first argument should be an object returned by function wass_regress.")
         }
         Qobs = wass_regress_res$Yobs$Qobs

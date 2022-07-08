@@ -64,7 +64,7 @@
 confidenceBands <- function(wass_regress_res, Xpred_df, level = 0.95, delta = 0.01, type = 'density', figure = TRUE, fig_num = NULL){
 
         ### ======================  input check  ====================== ###
-        if (class(wass_regress_res) != 'WRI') {
+        if (!is(wass_regress_res, "WRI")) {
                 stop("the first argument should be an object returned by function wass_regress.")
         }
         if (nargs() < 2) {

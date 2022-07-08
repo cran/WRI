@@ -4,12 +4,14 @@
 \name{strokeCTdensity}
 \alias{strokeCTdensity}
 \title{Stroke data: clinical, radiological scalar variables and density curves of the hematoma of 393 stroke patients}
-\format{a list of the following three fields:
+\format{
+a list of the following three fields:
 \describe{
 \item{densityCurve:}{393-by-101 head CT hematoma densities as distributional response}
 \item{densitySupport:}{length 101 common support vector}
 \item{predictors:}{393-by-9 matrix containing 9 scalar predictors}
-}}
+}
+}
 \description{
 Stroke data: clinical, radiological scalar variables and density curves of the hematoma of 393 stroke patients
 }

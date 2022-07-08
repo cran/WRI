@@ -25,10 +25,11 @@
 #' partialFtable = partialFtest(reduced_res, full_res, alpha = 0.05)
 
 partialFtest <- function(reduced_res, full_res, alpha = 0.05) {
-        if (class(full_res) != 'WRI') {
+        if (!is(full_res, "WRI")) {
                 stop("the first argument should be an object returned by function wass_regress.")
         }
-        if (class(reduced_res) != 'WRI') {
+
+        if (!is(reduced_res, "WRI")) {
                 stop('the second argument should be a list returned by function wass_regress')
         }
         p = ncol(full_res$xfit)

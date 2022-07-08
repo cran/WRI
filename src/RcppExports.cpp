@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // Rcpp_D_4cell
 Rcpp::List Rcpp_D_4cell(const arma::mat& Xmat, const arma::mat& Q_res, const arma::mat& q_res);
 RcppExport SEXP _WRI_Rcpp_D_4cell(SEXP XmatSEXP, SEXP Q_resSEXP, SEXP q_resSEXP) {
