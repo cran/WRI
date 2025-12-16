@@ -5,7 +5,7 @@
 #' @param alpha parameter in location transformation
 #' @param beta parameter in variance transformation
 #' @param t_vec a length m vector - common grid for all quantile functions
-#' @return {quan_obs} {n-by-m matrix of quantile functions}
+#' @return quan_obs: n-by-m matrix of quantile functions
 #' @examples
 #' alpha = 2
 #' beta = 1

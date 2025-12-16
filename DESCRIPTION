@@ -1,7 +1,7 @@
 Package: WRI
 Type: Package
 Title: Wasserstein Regression and Inference
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
     person("Xi", "Liu", email = "xiliu@ucsb.edu", role = c("aut", "cre")),
     person("Chao", "Zhang", email = "czhang@pstat.ucsb.edu", role = "aut"),
@@ -18,16 +18,14 @@ LazyData: true
 LazyDataCompression: xz
 LinkingTo: Rcpp, RcppArmadillo
 Depends: R (>= 3.6.0)
-Imports: fdapace (>= 0.2.0), fdadensity (>= 0.1.2), Rfast (>= 1.9.8),
-        CVXR (>= 0.99.7), expm (>= 0.999-4), ggplot2 (>= 3.2.1),
-        gridExtra (>= 2.3), stats, Rcpp (>= 1.0.3), locfit (>=
-        1.5-9.1), mvtnorm (>= 1.1-0), locpol (>= 0.7), modeest (>=
-        2.4.0), methods, rlang, polynom
-RoxygenNote: 7.2.0
-Suggests: knitr, rmarkdown, testthat (>= 2.1.0)
+Imports: fdapace (>= 0.2.0), Rfast (>= 1.9.8), CVXR (>= 0.99.7), expm
+        (>= 0.999-4), ggplot2 (>= 3.2.1), gridExtra (>= 2.3), stats,
+        Rcpp (>= 1.0.3), mvtnorm (>= 1.1-0), methods, rlang, polynom
+RoxygenNote: 7.3.3
+Suggests: knitr, rmarkdown, testthat (>= 2.1.0), modeest
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2022-07-08 22:56:17 UTC; czhang
+Packaged: 2025-12-16 08:08:08 UTC; lucyliu
 Maintainer: Xi Liu <xiliu@ucsb.edu>
 Repository: CRAN
-Date/Publication: 2022-07-08 23:30:11 UTC
+Date/Publication: 2025-12-16 08:40:02 UTC

@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -23,7 +23,7 @@ densityCurves = strokeCTdensity$densityCurve
 equal_t = den2Q_qd(densityCurves, dSup, t_vec = seq(0, 1, length.out = 120))
 nonequal_t = den2Q_qd(densityCurves, dSup, t_vec = unique(c(seq(0, 0.05, 0.001), seq(0.05, 0.95, 0.05), seq(0.95, 1, 0.001))))
 
-## ---- fig.align='center', fig.height=3, fig.width= 7, echo=F------------------
+## ----fig.align='center', fig.height=3, fig.width= 7, echo=F-------------------
 i = 1
 df_t = data.frame(densityFun = c(densityCurves[i, ], equal_t$fobs[i, ], nonequal_t$fobs[i, ]),
                   dSup = c(dSup,equal_t$Qobs[i, ], nonequal_t$Qobs[i, ]),
@@ -47,7 +47,7 @@ globalF_res =  globalFtest(res, alpha = 0.05, permutation = TRUE, numPermu = 200
 kable(globalF_res$summary_df, digits = 3)
 sprintf('The wasserstein F-statistic is %.3f on %.3f degrees of freedom', globalF_res$wasserstein.F_stat, globalF_res$chisq_df)
 
-## ---- eval=T------------------------------------------------------------------
+## ----eval=T-------------------------------------------------------------------
 # the reduced model only has four radiological variables
 reduced_res = wass_regress(~ log_b_vol + b_shapInd + midline_shift + B_TimeCT, Xfit_df = predictor, Ymat = densityCurves, Ytype = 'density', Sup = dSup)
 full_res = wass_regress(rightside_formula = ~., Xfit_df = predictor, Ymat = densityCurves, Ytype = 'density', Sup = dSup)
@@ -55,7 +55,7 @@ full_res = wass_regress(rightside_formula = ~., Xfit_df = predictor, Ymat = dens
 partialFtable = partialFtest(reduced_res, full_res, alpha = 0.05)
 kable(partialFtable, digits = 3)
 
-## ---- fig.width=7.2, fig.height=2.5-------------------------------------------
+## ----fig.width=7.2, fig.height=2.5--------------------------------------------
 xpred = colMeans(predictor)
 confidence_Band = confidenceBands(res, Xpred_df = xpred, type = 'both')
 
@@ -67,7 +67,7 @@ mean_mode_vec = apply(predictor, 2, mean_Mode)
 predictorDF = rbind(mean_mode_vec, mean_mode_vec)
 predictorDF[ , 1] = quantile(predictor$log_b_vol, probs = c(1/4, 3/4))
 
-## ---- fig.width=7.2, fig.height=3---------------------------------------------
+## ----fig.width=7.2, fig.height=3----------------------------------------------
 res_cb = confidenceBands(res, predictorDF, level = 0.95, delta = 0.01, type = 'both', figure = F)
 m = ncol(res_cb$quan_list$Q_lx)
 na.mat = matrix(NA, nrow = 2, ncol = m - ncol(res_cb$den_list$f_lx))

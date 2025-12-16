@@ -25,10 +25,10 @@
 #' \item{Xfit_df}{n-by-p matrix (or dataframe) of predictor values for fitting}
 #' \item{Yobs}{a list containing the following matrices:
 #' \itemize{
-#' \item{Qobs:} {n-by-m matrix of the observed quantile functions.}
-#' \item{qobs:} {n-by-m matrix of the observed quantile density functions.}
-#' \item{qobs_prime:} {n-by-m matrix of the first derivative of the observed quantile density functions.}
-#' \item{fobs:} {n-by-m matrix of the observed density functions.}
+#' \item{Qobs: n-by-m matrix of the observed quantile functions.}
+#' \item{qobs: n-by-m matrix of the observed quantile density functions.}
+#' \item{qobs_prime: n-by-m matrix of the first derivative of the observed quantile density functions.}
+#' \item{fobs: n-by-m matrix of the observed density functions.}
 #' }}
 #' \item{t_vec}{a length m vector - common grid for all quantile functions in Qobs.}
 #' @examples
@@ -60,7 +60,7 @@ wass_regress <- function(rightside_formula, Xfit_df, Ytype, Ymat, Sup = NULL) {
         if (Ytype != 'density' & (min(Sup) != 0 | max(Sup) != 1)) {
                 stop("Input Sup should be an increasing grid beginning at 0 and ending at 1")
         }
-        if (Ytype != 'density' & !all(diff(t(Ytype)) >= 0)) {
+        if (Ytype != 'density' & !all(diff(t(Ymat)) >= 0)) {
                 stop("Each row of Ymat should be nondecreasing")
         }
         if (length(Sup) < 25) {

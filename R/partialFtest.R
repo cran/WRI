@@ -2,16 +2,17 @@
 #' @export
 #' @details two methods used to compute p value using asymptotic distribution of F statistic
 #' \itemize{
-#' \item{truncated:}{ asymptotic inference, p-value is obtained by truncating the infinite summation of eigenvalues into the first K terms, where the first K terms explain more than 99.99\% of the variance.}
-#' \item{satterthwaite:}{ asymptotic inference, p-value is computed using Satterthwaite approximation method of mixtures of chi-square.}}
+#' \item{truncated: asymptotic inference, p-value is obtained by truncating the infinite summation of eigenvalues into the first K terms, where the first K terms explain more than 99.99\% of the variance.}
+#' \item{satterthwaite: asymptotic inference, p-value is computed using Satterthwaite approximation method of mixtures of chi-square.}}
 #' @param reduced_res a reduced model list returned by the \code{wass_regress} function
 #' @param full_res a full model list returned by the \code{wass_regress} function
 #' @param alpha type one error rate
 #' @return a dataframe containing the following columns:
-#' \item{method}{methods used to compute p value, see details}
-#' \item{statistic}{the test statistics}
-#' \item{critical_value}{critical value}
-#' \item{p_value}{p value of global F test}
+#' \itemize{
+#' \item{method:methods used to compute p value, see details}
+#' \item{statistic:the test statistics}
+#' \item{critical_value:critical value}
+#' \item{p_value:p value of global F test}}
 #' @examples
 #' data(strokeCTdensity)
 #' predictor = strokeCTdensity$predictors

@@ -16,7 +16,7 @@ simulate_quantile_curves(x1, alpha, beta, t_vec)
 \item{t_vec}{a length m vector - common grid for all quantile functions}
 }
 \value{
-{quan_obs} {n-by-m matrix of quantile functions}
+quan_obs: n-by-m matrix of quantile functions
 }
 \description{
 This function simulates quantile curves used as a toy example

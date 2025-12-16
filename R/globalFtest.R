@@ -2,10 +2,10 @@
 #' @export
 #' @details four methods used to compute p value of global F test
 #' \itemize{
-#' \item{truncated:}{ asymptotic inference,  p-value is obtained by truncating the infinite summation of eigenvalues into the first K terms, where the first K terms explain more than 99.99\% of the variance.}
-#' \item{satterthwaite:}{ asymptotic inference, p-value is computed using Satterthwaite's approximation method of mixtures of chi-square.}
-#' \item{permutation:}{ resampling technique; Wasserstein SSR is used as the F statistic.}
-#' \item{bootstrap:}{ resampling technique; Wasserstein SSR is used as the F statistic.}}
+#' \item{truncated: asymptotic inference,  p-value is obtained by truncating the infinite summation of eigenvalues into the first K terms, where the first K terms explain more than 99.99\% of the variance.}
+#' \item{satterthwaite: asymptotic inference, p-value is computed using Satterthwaite's approximation method of mixtures of chi-square.}
+#' \item{permutation: resampling technique; Wasserstein SSR is used as the F statistic.}
+#' \item{bootstrap: resampling technique; Wasserstein SSR is used as the F statistic.}}
 #' @param wass_regress_res an object returned by the \code{wass_regress} function
 #' @param alpha type one error rate
 #' @param permutation logical; perform permutation global F test (default: FALSE)
@@ -13,14 +13,15 @@
 #' @param bootstrap logical; bootstrap global F test (default: FALSE)
 #' @param numBoot number of bootstrap samples if bootstrap = TRUE
 #' @return a list containing the following fields:
-#' \item{wasserstein.F_stat}{the Wasserstein F statistic value in Satterthwaite method .}
-#' \item{chisq_df}{the degree of freedom of the null chi-square distribution.}
-#' \item{summary_df}{a dataframe containing the following columns:}
 #' \itemize{
-#' \item{method:} {methods used to compute p value, see details}
-#' \item{statistic:} {the test statistics}
-#' \item{critical_value:} {critical value}
-#' \item{p_value:} {p value of global F test}}
+#' \item{wasserstein.F_stat:the Wasserstein F statistic value in Satterthwaite method.}
+#' \item{chisq_df:the degree of freedom of the null chi-square distribution.}
+#' \item{summary_df:a dataframe containing the following columns:}
+#' \itemize{
+#' \item{method:methods used to compute p value, see details}
+#' \item{statistic:the test statistics}
+#' \item{critical_value:critical value}
+#' \item{p_value:p value of global F test}}}
 #' @examples
 #' data(strokeCTdensity)
 #' predictor = strokeCTdensity$predictors
@@ -28,7 +29,7 @@
 #' densityCurves = strokeCTdensity$densityCurve
 #'
 #' res = wass_regress(rightside_formula = ~., Xfit_df = predictor,
-#'  Ytype = 'density', Ymat = densityCurves, Sup = dSup)
+#' Ytype = 'density', Ymat = densityCurves, Sup = dSup)
 #' globalF_res = globalFtest(res, alpha = 0.05, permutation = TRUE, numPermu = 200)
 
 globalFtest <- function(wass_regress_res, alpha = 0.05, permutation = FALSE, numPermu = 200, bootstrap = FALSE, numBoot = 200) {

@@ -17,24 +17,24 @@
 #' @return a list containing the following lists:
 #' \item{den_list:}{
 #' \itemize{
-#' \item{fpred:} {k-by-m matrix, predicted density function at Xpred_df.}
-#' \item{f_ux:} {k-by-m matrix, upper bound of confidence bands of density functions.}
-#' \item{f_lx:} {k-by-m matrix, lower bound of confidence bands of density functions.}
-#' \item{Qpred:} {k-by-m matrix, f_lx[i, ], f_ux[i, ] and fpred[i, ] evaluated on Qpred[i, ] vector.}
+#' \item{fpred: k-by-m matrix, predicted density function at Xpred_df.}
+#' \item{f_ux: k-by-m matrix, upper bound of confidence bands of density functions.}
+#' \item{f_lx: k-by-m matrix, lower bound of confidence bands of density functions.}
+#' \item{Qpred: k-by-m matrix, f_lx[i, ], f_ux[i, ] and fpred[i, ] evaluated on Qpred[i, ] vector.}
 #' }}
 #' \item{quan_list:}{
 #' \itemize{
-#' \item{Qpred:} {k-by-m matrix of predicted quantile functions.}
-#' \item{Q_ux:} {k-by-m matrix of upper bound of quantile functions.}
-#' \item{Q_lx:} {k-by-m matrix of lower bound of quantile functions.}
-#' \item{t_vec:} {a length m vector - common grid for all quantile functions.}}}
+#' \item{Qpred: k-by-m matrix of predicted quantile functions.}
+#' \item{Q_ux: k-by-m matrix of upper bound of quantile functions.}
+#' \item{Q_lx: k-by-m matrix of lower bound of quantile functions.}
+#' \item{t_vec: a length m vector - common grid for all quantile functions.}}}
 #' \item{cdf_list:}{
 #' \itemize{
-#' \item{fpred:} {k-by-m matrix, predicted density function.}
-#' \item{Fpred:} {k-by-m matrix, predicted cumulative distribution functions.}
-#' \item{F_ux:} {k-by-m matrix, upper bound of cumulative distribution functions.}
-#' \item{F_lx:} {k-by-m matrix, lower bound of cumulative distribution functions.}
-#' \item{Fsup:} {k-by-m matrix, fpred[i, ], F_lx[i, ], F_ux[i, ] and Fpred[i, ] evaluated on Fsup[i, ] vector.}}}
+#' \item{fpred: k-by-m matrix, predicted density function.}
+#' \item{Fpred: k-by-m matrix, predicted cumulative distribution functions.}
+#' \item{F_ux: k-by-m matrix, upper bound of cumulative distribution functions.}
+#' \item{F_lx: k-by-m matrix, lower bound of cumulative distribution functions.}
+#' \item{Fsup: k-by-m matrix, fpred[i, ], F_lx[i, ], F_ux[i, ] and Fpred[i, ] evaluated on Fsup[i, ] vector.}}}
 #' @examples
 #' alpha = 2
 #' beta = 1

@@ -15,10 +15,11 @@ partialFtest(reduced_res, full_res, alpha = 0.05)
 }
 \value{
 a dataframe containing the following columns:
-\item{method}{methods used to compute p value, see details}
-\item{statistic}{the test statistics}
-\item{critical_value}{critical value}
-\item{p_value}{p value of global F test}
+\itemize{
+\item{method:methods used to compute p value, see details}
+\item{statistic:the test statistics}
+\item{critical_value:critical value}
+\item{p_value:p value of global F test}}
 }
 \description{
 partial F test for Wasserstein regression
@@ -26,8 +27,8 @@ partial F test for Wasserstein regression
 \details{
 two methods used to compute p value using asymptotic distribution of F statistic
 \itemize{
-\item{truncated:}{ asymptotic inference, p-value is obtained by truncating the infinite summation of eigenvalues into the first K terms, where the first K terms explain more than 99.99\% of the variance.}
-\item{satterthwaite:}{ asymptotic inference, p-value is computed using Satterthwaite approximation method of mixtures of chi-square.}}
+\item{truncated: asymptotic inference, p-value is obtained by truncating the infinite summation of eigenvalues into the first K terms, where the first K terms explain more than 99.99\% of the variance.}
+\item{satterthwaite: asymptotic inference, p-value is computed using Satterthwaite approximation method of mixtures of chi-square.}}
 }
 \examples{
 data(strokeCTdensity)
