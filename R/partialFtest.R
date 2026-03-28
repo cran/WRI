@@ -79,7 +79,7 @@ partialFtest <- function(reduced_res, full_res, alpha = 0.05) {
         trun_index = cumsum(eigenvalues)/sum(eigenvalues) < 0.999
         Keigenvalue = eigenvalues[trun_index]
         repN = 500
-        chisquare = matrix(rchisq(repN * length(Keigenvalue), df = r), nrow = repN, ncol = length(Keigenvalue))
+        chisquare = matrix(rchisq(repN * length(Keigenvalue), df = 1), nrow = repN, ncol = length(Keigenvalue))
         empiricalF = chisquare %*% Keigenvalue
         critical_value_trun = quantile(empiricalF, probs = 1 - alpha)
         pValue_trun = (sum(empiricalF > partialFstat) + 1)/(repN + 1)
@@ -87,7 +87,7 @@ partialFtest <- function(reduced_res, full_res, alpha = 0.05) {
         ### =================   satterthwaite method   ===================== ###
 
         a = HS_r_dim_kernal/trace_r_dim_kernal
-        m_chisq = r * trace_r_dim_kernal / a
+        m_chisq = trace_r_dim_kernal / a
         criticalValue_satt = qchisq(1 - alpha, m_chisq) * a;
         pValue_satt = pchisq(partialFstat/a, m_chisq, lower.tail = F)
 

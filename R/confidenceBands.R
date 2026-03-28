@@ -206,7 +206,7 @@ confidenceBands <- function(wass_regress_res, Xpred_df, level = 0.95, delta = 0.
                         if (any(diff(Qi_lx) < 0)){
                                 Qrefit = CVXR::Variable(m)
                                 obj = sum(((Qi_lx - Qrefit))^2)
-                                prob = CVXR::Problem(CVXR::Minimize(obj), list(CVXR::diff(Qrefit) >= 0, Qpred[i, ] - Qrefit >= 0))
+                                prob = CVXR::Problem(CVXR::Minimize(obj), list(CVXR::cvxr_diff(Qrefit) >= 0, Qpred[i, ] - Qrefit >= 0))
                                 result = CVXR::psolve(prob)
                                 Qrefit = result$getValue(Qrefit)
                                 Qi_lx = Qrefit
@@ -215,7 +215,7 @@ confidenceBands <- function(wass_regress_res, Xpred_df, level = 0.95, delta = 0.
                         if (any(diff(Qi_ux) < 0)){
                                 Qrefit = CVXR::Variable(m)
                                 obj = sum(((Qi_ux - Qrefit))^2)
-                                prob = CVXR::Problem(CVXR::Minimize(obj), list(CVXR::diff(Qrefit) >= 0,  Qrefit - Qpred[i, ] >= 0))
+                                prob = CVXR::Problem(CVXR::Minimize(obj), list(CVXR::cvxr_diff(Qrefit) >= 0,  Qrefit - Qpred[i, ] >= 0))
                                 result = CVXR::psolve(prob)
                                 Qrefit = result$getValue(Qrefit)
                                 Qi_ux = Qrefit

@@ -18,7 +18,7 @@ quadraticQ <- function(Qmat, t) {
                         m = length(Qmat[i, ])
                         Qrefit = CVXR::Variable(m)
                         obj = sum(((Qmat[i, ] - Qrefit)*t_diff_m)^2)
-                        prob = CVXR::Problem(CVXR::Minimize(obj), list(CVXR::diff(Qrefit) >= 0))
+                        prob = CVXR::Problem(CVXR::Minimize(obj), list(CVXR::cvxr_diff(Qrefit) >= 0))
                         result = CVXR::psolve(prob)
                         Qrefit = result$getValue(Qrefit)
 
