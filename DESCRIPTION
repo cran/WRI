@@ -1,16 +1,16 @@
 Package: WRI
 Type: Package
 Title: Wasserstein Regression and Inference
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: c(
-    person("Xi", "Liu", email = "xiliu@ucsb.edu",  role = c("aut", "cre")),
+    person("Alexander", "Petersen", email = "petersen@stat.byu.edu", role = c("aut", "cre")),
+    person("Xi", "Liu", email = "xiliu@ucsb.edu",  role = "aut"),
     person("Chao", "Zhang", email = "czhang@pstat.ucsb.edu", role = "aut"),
-    person("Matthew", "Coleman", email = "matthewbcoleman@ucsb.edu", role = "aut"),
-    person("Alexander", "Petersen", email = "petersen@stat.byu.edu", role = c("aut")))
-Author: Xi Liu [aut, cre],
+    person("Matthew", "Coleman", email = "matthewbcoleman@ucsb.edu", role = "aut"))
+Author: Alexander Petersen [aut, cre],
+  Xi Liu [aut],
   Chao Zhang [aut],
-  Matthew Coleman [aut],
-  Alexander Petersen [aut]
+  Matthew Coleman [aut]
 Description: Implementation of the methodologies described in 1) Alexander Petersen, Xi Liu and Afshin A. Divani (2021) <doi:10.1214/20-aos1971>, including global F tests, partial F tests, intrinsic Wasserstein-infinity bands and Wasserstein density bands, and 2) Chao Zhang, Piotr Kokoszka and Alexander Petersen (2022) <doi:10.1111/jtsa.12590>, including estimation, prediction, and inference of the Wasserstein autoregressive models.
 License: GPL-2
 Encoding: UTF-8
@@ -25,7 +25,7 @@ RoxygenNote: 7.3.3
 Suggests: knitr, rmarkdown, testthat (>= 2.1.0), modeest
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2026-03-28 14:37:51 UTC; lucyliu
-Maintainer: Xi Liu <xiliu@ucsb.edu>
+Packaged: 2026-03-28 21:52:01 UTC; lucyliu
+Maintainer: Alexander Petersen <petersen@stat.byu.edu>
 Repository: CRAN
-Date/Publication: 2026-03-28 18:30:02 UTC
+Date/Publication: 2026-03-30 07:30:22 UTC

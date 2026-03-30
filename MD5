@@ -1,4 +1,4 @@
-2baec0651219cd82f40828adc7fd43c2 *DESCRIPTION
+35beeb2d675b6d34a33e80b6dfd10861 *DESCRIPTION
 2d224fb1c4b06cbd9d739168e6c8a994 *NAMESPACE
 8107c9818b6ac3329f85fc2f7a3d6e65 *NEWS.md
 a8235dd5718b1ad2bc306a6e0f3b5d89 *R/Exp_Map.R
@@ -26,7 +26,7 @@ fa8bfe0accdd11ece281ae0b9d35dc37 *R/wass_regress.R
 cdc8ca46b271e92ed9233e0254886539 *data/strokeCTdensity.RData
 7e7689c19cda9e6c66d027a0352a7a2d *inst/doc/WRI-vignette.R
 ef0f3243ee8cb8f7e4686b557b912e32 *inst/doc/WRI-vignette.Rmd
-6bfe39ed50298b831f6cded9c7f0f351 *inst/doc/WRI-vignette.html
+a8b51fbaf1dcf8be2419e40238afa323 *inst/doc/WRI-vignette.html
 52b971fc9279489a47ef23e9b47c12a3 *man/Exp_Map_Barycenter_Method.Rd
 d849690340c29a1d893ef0ea480cd080 *man/Exp_Map_Barycenter_Method_pw.Rd
 3fc1228ea1226aab0aa9cd5d67bf5645 *man/Sample_ACV.Rd
